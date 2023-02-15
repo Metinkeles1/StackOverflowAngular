@@ -5,20 +5,38 @@
             <mat-form-field appearance="outline">
                 <mat-label>Emailinizi Giriniz</mat-label>
                 <input matInput formControlName="email"/>
+                <mat-error *ngIf="createUserForm.controls['email'].hasError('required')">
+                    Email Zorunludur
+                </mat-error>
+                <mat-error *ngIf="createUserForm.controls['email'].hasError('email')">
+                    Email Doğru formatta giriniz.
+                </mat-error>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
                 <mat-label>Kullanıcı Adını Giriniz</mat-label>
                 <input matInput formControlName="username"/>
+                <mat-error *ngIf="createUserForm.controls['username'].hasError('required')">
+                    Kullanıcı Adı Zorunludur.
+                </mat-error>
+                <mat-error *ngIf="createUserForm.controls['username'].hasError('maxlength')">
+                    Kullanıcı Adı 10 karakterden fazla olamaz
+                </mat-error>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
                 <mat-label>Şifrenizi Giriniz</mat-label>
                 <input type="password" matInput formControlName="password"> 
+                <mat-error *ngIf="createUserForm.controls['password'].hasError('required')">
+                    Şifre Zorunludur.
+                </mat-error>
+                <mat-error *ngIf="createUserForm.controls['password'].hasError('minlength')">
+                    Şifrenin uzunluğu en az 8 karakter olmalıdır.
+                </mat-error>
             </mat-form-field>
         </form>
         <div class="buttons-container">
-            <button mat-raised-button class="login-button">
+            <button [disabled]="createUserForm.invalid" mat-raised-button class="login-button">
                 Kaydol 
             </button>
             <p>Veya</p>

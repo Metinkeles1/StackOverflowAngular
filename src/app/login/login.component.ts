@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -17,4 +17,8 @@ export class LoginComponent {
     email: ['', [Validators.required,Validators.email]],
     password: ['', [Validators.required, Validators.minLength(8)]],
   });
+
+  get f(): { [key: string]: AbstractControl}{
+    return this.loginForm.controls;
+  }
 }
