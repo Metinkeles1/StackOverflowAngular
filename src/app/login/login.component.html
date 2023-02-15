@@ -1,14 +1,14 @@
 <div class="container">
     <div class="form-container">
         <div class="title">Giriş</div>
-        <form >
+        <form [formGroup]="loginForm">
             <mat-form-field appearance="outline">
                 <mat-label>Emailinizi Giriniz</mat-label>
-                <input matInput/>
+                <input matInput formControlName="email"/>
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label>Şifrenizi Giriniz</mat-label>
-                <input type="password" matInput> 
+                <input type="password" matInput formControlName="password"> 
             </mat-form-field>
         </form>
         <div class="buttons-container">
@@ -17,6 +17,8 @@
             </button>
             <p>Veya</p>
             <button mat-button routerLink="/createuser">Hesap Oluştur</button>
+            
         </div>
     </div>
 </div>
+
