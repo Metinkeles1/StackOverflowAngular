@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +10,7 @@ import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(private fb:FormBuilder){}
+  constructor(private fb:FormBuilder,public userService:UserService,private snackbar:MatSnackBar) { }
 
   ngOnInit():void {
     
@@ -20,5 +23,15 @@ export class LoginComponent {
 
   get f(): { [key: string]: AbstractControl}{
     return this.loginForm.controls;
+  }
+
+  login()
+  {
+      this.userService.getUser(this.loginForm.value.email).subscribe((res)=>{
+      //  console.log(res);      
+      if(res.length == 0){
+        this.snackbar.open('Böyle bir hesap bulunamadı', 'Ok');
+      }
+      })
   }
 }

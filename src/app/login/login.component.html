@@ -24,7 +24,7 @@
             </mat-form-field>
         </form>
         <div class="buttons-container">
-            <button [disabled]="loginForm.invalid" mat-raised-button class="login-button">
+            <button [disabled]="loginForm.invalid" (click)="login()" mat-raised-button class="login-button">
                 Giriş Yap
             </button>
             <p>Veya</p>

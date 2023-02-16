@@ -14,6 +14,7 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { BaseService } from './services/base.service';
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { BaseService } from './services/base.service';
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSnackBarModule
   ],
   providers: [BaseService],
   bootstrap: [AppComponent]
