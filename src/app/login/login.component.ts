@@ -10,7 +10,7 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(private fb:FormBuilder,public userService:UserService,private snackbar:MatSnackBar) { }
+  constructor(private fb:FormBuilder,public userService:UserService,private snackbar:MatSnackBar, private router:Router) { }
 
   ngOnInit():void {
     
@@ -31,6 +31,17 @@ export class LoginComponent {
       //  console.log(res);      
       if(res.length == 0){
         this.snackbar.open('Böyle bir hesap bulunamadı', 'Ok');
+      }
+      else{
+        if(res[0].password === this.loginForm.value.password)
+        {
+          this.userService.user=res[0];
+          localStorage.setItem('user', JSON.stringify(res[0]));
+          this.router.navigateByUrl('/home');
+        }
+        else{
+          this.snackbar.open("Yanlış Şifre", "Ok");
+        }
       }
       })
   }

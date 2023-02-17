@@ -5,6 +5,8 @@ import { BaseService } from './base.service';
   providedIn: 'root'
 })
 export class UserService extends BaseService {
+  
+  public user:any;
 
   constructor(private base:BaseService) { 
     super(base.http);
