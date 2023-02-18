@@ -10,21 +10,15 @@
   "questions": [
     {
       "username": "metinkeles",
-      "question": "Metin Keleş",
+      "question": "nasıl yaparım",
       "solutions": [],
       "id": 1
     },
     {
       "username": "metinkeles",
-      "question": "nasıl yaparım",
+      "question": "Angular nasıl?",
       "solutions": [],
       "id": 2
-    },
-    {
-      "username": "metinkeles",
-      "question": "deneme\n",
-      "solutions": [],
-      "id": 3
     }
   ]
 }

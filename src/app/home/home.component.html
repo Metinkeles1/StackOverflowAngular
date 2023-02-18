@@ -9,7 +9,7 @@
         <button (click)="post()" [disabled]="question.trim() == ''" mat-raised-button class="post-button">Sor</button>
       </div>
   
-      <mat-card *ngFor="let item of questionList"  class="question-card">
+      <mat-card *ngFor="let item of questionList" [routerLink]="'/show-solutions/'+item.id" class="question-card">
         <mat-card-content>
           <p class="username">{{item.username}}</p>
           <p>
