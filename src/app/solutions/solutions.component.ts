@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { QuestionService } from '../services/question.service';
 import { UserService } from '../services/user.service';
 
@@ -14,7 +14,7 @@ export class SolutionsComponent {
   questionId: any;
   questionObj:any;
 
-  constructor(public questionService:QuestionService, public userService:UserService, private route:ActivatedRoute){}
+  constructor(public questionService:QuestionService, public userService:UserService, private route:ActivatedRoute, private router:Router){}
 
   ngOnInit():void {
     this.questionId = this.route.snapshot.paramMap.get('questionid');  
@@ -37,5 +37,9 @@ export class SolutionsComponent {
       debugger;
       this.solutionText="";
     })
+   }
+
+   returnBack(){
+    this.router.navigateByUrl('/home');
    }
 }
