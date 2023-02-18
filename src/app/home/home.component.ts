@@ -9,8 +9,15 @@ import { UserService } from '../services/user.service';
 })
 export class HomeComponent {
   question:string = "";
+  questionList: Array<any> = [];
 
   constructor(public questionService:QuestionService, public userService:UserService){}
+
+  ngOnInit():void{
+    this.questionService.getQuestion().subscribe((res) =>{
+      this.questionList = res;
+    })
+  }
 
   post(){
     this.questionService.postQuestion({
@@ -18,7 +25,7 @@ export class HomeComponent {
       question:this.question,
       solutions:[]
     }).subscribe((res) => {
-      console.log(res);
+      this.questionList.push(res);
     });
   }
 }

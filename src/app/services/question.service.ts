@@ -16,4 +16,8 @@ export class QuestionService extends BaseService {
     return this.postReq('/questions',questionObj);
   }
 
+  public getQuestion(){
+    return this.getReq('/questions');
+  }
+
 }

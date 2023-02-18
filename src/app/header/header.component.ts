@@ -12,7 +12,7 @@ export class HeaderComponent {
 
   ngOnInit(): void{
     let str = localStorage.getItem('user');
-    debugger;
+    
     if(str){
       this.userService.user =JSON.parse(str);
     }else{
