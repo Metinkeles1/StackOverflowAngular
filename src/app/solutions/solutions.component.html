@@ -11,13 +11,13 @@
               <div class="solution-container">
                   <div class="arrows-container">
                       <button mat-icon-button><mat-icon>expand_less</mat-icon></button>
-                        <span class="increasedecrease"></span>
+                        <span class="increasedecrease">2</span>
                       <button mat-icon-button><mat-icon>expand_more</mat-icon></button>
                   </div>
                   <div class="data-container">
-                      <p class="username"></p>
+                      <p class="username">asdfa</p>
                       <p>
-                        <span class="increasedecrease"></span>
+                        <span class="increasedecrease">asdfasdfasdf</span>
                       </p>
                   </div>
               </div>
@@ -26,12 +26,12 @@
         </mat-card>
   
         <mat-form-field appearance="fill">
-          <textarea  matInput cdkTextareaAutosize cdkAutosizeMinRows="5" placeholder="Cevabınızı Girin..."></textarea>
+          <textarea [(ngModel)]="solutionText" matInput cdkTextareaAutosize cdkAutosizeMinRows="5" placeholder="Cevabınızı Girin..."></textarea>
         </mat-form-field>
-  
+        {{solutionText}}
   
         <div class="new-post-actions-container">
-          <button mat-raised-button class="post-button">Kaydet</button>
+          <button (click)="postSolution()" [disabled]="solutionText.trim()==''" mat-raised-button class="post-button">Kaydet</button>
         </div>
       </div>
     </div>

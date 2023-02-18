@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { QuestionService } from '../services/question.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-solutions',
@@ -7,4 +10,32 @@ import { Component } from '@angular/core';
 })
 export class SolutionsComponent {
 
+  solutionText:string = "";
+  questionId: any;
+  questionObj:any;
+
+  constructor(public questionService:QuestionService, public userService:UserService, private route:ActivatedRoute){}
+
+  ngOnInit():void {
+    this.questionId = this.route.snapshot.paramMap.get('questionid');  
+    this.questionService.getQuestonWithId(this.questionId).subscribe((res) => {
+      console.log(res);
+      this.questionObj =res;
+    })
+   }
+
+   postSolution(){
+    let solutionObj = {
+      username:this.userService.user.username,
+      solution:this.solutionText,
+      plus:[],
+      minus:[]
+    };
+    this.questionObj.solutions.push(solutionObj);    
+
+    this.questionService.updateQuestion(this.questionObj).subscribe((res) => {
+      debugger;
+      this.solutionText="";
+    })
+   }
 }

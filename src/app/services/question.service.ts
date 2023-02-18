@@ -20,4 +20,11 @@ export class QuestionService extends BaseService {
     return this.getReq('/questions');
   }
 
+  public getQuestonWithId(id:string){
+    return this.getReq('/questions/'+id);
+  }
+
+  public updateQuestion(newObj:any){
+    return this.putReq('/questions/'+newObj.id,newObj);
+  }
 }

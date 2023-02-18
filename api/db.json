@@ -11,7 +11,20 @@
     {
       "username": "metinkeles",
       "question": "nasıl yaparım",
-      "solutions": [],
+      "solutions": [
+        {
+          "username": "metinkeles",
+          "solution": "asdasd",
+          "plus": [],
+          "minus": []
+        },
+        {
+          "username": "metinkeles",
+          "solution": "asdfasdf",
+          "plus": [],
+          "minus": []
+        }
+      ],
       "id": 1
     },
     {
@@ -19,6 +32,12 @@
       "question": "Angular nasıl?",
       "solutions": [],
       "id": 2
+    },
+    {
+      "username": "metinkeles",
+      "question": "asdfasdf",
+      "solutions": [],
+      "id": 3
     }
   ]
 }
