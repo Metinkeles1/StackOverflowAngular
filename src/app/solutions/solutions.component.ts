@@ -33,13 +33,40 @@ export class SolutionsComponent {
     };
     this.questionObj.solutions.push(solutionObj);    
 
-    this.questionService.updateQuestion(this.questionObj).subscribe((res) => {
-      debugger;
+    this.questionService.updateQuestion(this.questionObj).subscribe((res) => {      
       this.solutionText="";
     })
    }
 
    returnBack(){
     this.router.navigateByUrl('/home');
+   }
+
+   vote(index:number,point:number){    
+    if(point == 1){
+      if(!(this.questionObj.solutions[index].plus.indexOf(this.userService.user.id) >=0)){
+        this.questionObj.solutions[index].plus.push(this.userService.user.id);
+      }
+      for(let i = 0; i < this.questionObj.solutions[index].minus.length; i++){
+        if(this.questionObj.solutions[index].minus[i] == this.userService.user.id){
+          this.questionObj.solutions[index].minus.splice(i,1);
+        }
+      }
+    }
+    else{
+      if(!(this.questionObj.solutions[index].minus.indexOf(this.userService.user.id) >=0)){
+        this.questionObj.solutions[index].minus.push(this.userService.user.id);
+      }      
+
+      for(let i = 0; i < this.questionObj.solutions[index].plus.length; i++){
+        if(this.questionObj.solutions[index].plus[i] == this.userService.user.id){
+          this.questionObj.solutions[index].plus.splice(i,1);
+        }
+      }
+    }
+
+    this.questionService.updateQuestion(this.questionObj).subscribe((res) => {    
+      this.solutionText="";
+    })
    }
 }

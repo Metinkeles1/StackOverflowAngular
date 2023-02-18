@@ -15,14 +15,18 @@
         {
           "username": "metinkeles",
           "solution": "asdasd",
-          "plus": [],
+          "plus": [
+            1
+          ],
           "minus": []
         },
         {
           "username": "metinkeles",
           "solution": "asdfasdf",
           "plus": [],
-          "minus": []
+          "minus": [
+            1
+          ]
         }
       ],
       "id": 1
