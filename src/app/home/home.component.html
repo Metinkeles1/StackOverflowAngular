@@ -1,22 +1,49 @@
 <div class="container">
     <div class="content-wrapper">
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="fill">               
+        <textarea [(ngModel)]="questionTitle"  matInput cdkTextareaAutosize cdkAutosizeMinRows="2" placeholder="Konu?"></textarea>
+      </mat-form-field>
+      <mat-form-field appearance="fill">               
         <textarea [(ngModel)]="question"  matInput cdkTextareaAutosize cdkAutosizeMinRows="5" placeholder="Sorunuzu sorun..."></textarea>
       </mat-form-field>
-      {{question}}
+      
       
       <div class="new-post-actions-container">
-        <button (click)="post()" [disabled]="question.trim() == ''" mat-raised-button class="post-button">Sor</button>
+        <button (click)="post()" [disabled]="question.trim() == '' || questionTitle.trim() == ''" mat-raised-button class="post-button">Sor</button>
       </div>
   
-      <mat-card *ngFor="let item of questionList" [routerLink]="'/show-solutions/'+item.id" class="question-card">
-        <mat-card-content>
-          <p class="username">{{item.username}}</p>
-          <p>
-            {{item.question}}
-          </p>
+      <!-- <mat-card *ngFor="let item of questionList" [routerLink]="'/show-solutions/'+item.id" class="question-card">          
+        <mat-card-content >
+          <div class="solution-container" >            
+              <div class="arrows-container">                
+                <button mat-icon-button><mat-icon>expand_less</mat-icon></button>
+                  <span class="increasedecrease">2</span>
+                <button mat-icon-button><mat-icon>expand_more</mat-icon></button>
+              </div>     
+              <div class="data-container">
+                <p class="username">{{item.username}}</p>
+                <p>
+                  {{item.question}}
+                </p>          
+              </div>            
+          </div>
         </mat-card-content>
+      </mat-card> -->
+
+      <mat-card *ngFor="let item of questionList" [routerLink]="'/show-solutions/'+item.id" class="example-card">
+        <mat-card-header>
+          <mat-card-title>{{item.questionTitle}}</mat-card-title>         
+        </mat-card-header>        
+        <mat-card-actions class="card-content">
+          <div>
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>
+          </div>
+          <div>
+            <mat-card-subtitle style="margin-left: 10px;">@{{item.username}}</mat-card-subtitle>
+          </div>
+        </mat-card-actions>
       </mat-card>
+      
     </div>
   </div>
-  

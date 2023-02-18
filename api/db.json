@@ -5,43 +5,28 @@
       "username": "metinkeles",
       "password": "12345678",
       "id": 1
+    },
+    {
+      "email": "metinkeles1@hotmail.com",
+      "username": "eralkaven",
+      "password": "eralkavender",
+      "id": 2
     }
   ],
   "questions": [
     {
       "username": "metinkeles",
-      "question": "nasıl yaparım",
-      "solutions": [
-        {
-          "username": "metinkeles",
-          "solution": "asdasd",
-          "plus": [
-            1
-          ],
-          "minus": []
-        },
-        {
-          "username": "metinkeles",
-          "solution": "asdfasdf",
-          "plus": [],
-          "minus": [
-            1
-          ]
-        }
-      ],
+      "questionTitle": "Javascript hakkında yardımcı olur musunuz ",
+      "question": "kod yazarken böyle bir hata aldım ama nasıl halledebilirim",
+      "solutions": [],
       "id": 1
     },
     {
       "username": "metinkeles",
-      "question": "Angular nasıl?",
+      "questionTitle": "Angular nasıl?",
+      "question": "Angular nasıl öğrenirim",
       "solutions": [],
       "id": 2
-    },
-    {
-      "username": "metinkeles",
-      "question": "asdfasdf",
-      "solutions": [],
-      "id": 3
     }
   ]
 }
