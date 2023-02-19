@@ -26,5 +26,6 @@ export class QuestionService extends BaseService {
 
   public updateQuestion(newObj:any){
     return this.putReq('/questions/'+newObj.id,newObj);
-  }
+  }  
+
 }

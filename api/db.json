@@ -16,17 +16,74 @@
   "questions": [
     {
       "username": "metinkeles",
-      "questionTitle": "Javascript hakkında yardımcı olur musunuz ",
-      "question": "kod yazarken böyle bir hata aldım ama nasıl halledebilirim",
-      "solutions": [],
+      "questionTitle": "asdfa",
+      "question": "asdfasd",
+      "questionPlus": [],
+      "questionMinus": [],
+      "solutions": [
+        {
+          "username": "eralkaven",
+          "solution": "asfdasdf",
+          "plus": [
+            2
+          ],
+          "minus": []
+        },
+        {
+          "username": "eralkaven",
+          "solution": "asdfasdf",
+          "plus": [],
+          "minus": [
+            2
+          ]
+        }
+      ],
       "id": 1
     },
     {
       "username": "metinkeles",
-      "questionTitle": "Angular nasıl?",
-      "question": "Angular nasıl öğrenirim",
-      "solutions": [],
+      "questionTitle": "asdf asdf ",
+      "question": "aasdf asd",
+      "questionPlus": [],
+      "questionMinus": [],
+      "solutions": [
+        {
+          "username": "eralkaven",
+          "solution": "adfas",
+          "plus": [],
+          "minus": [
+            2
+          ]
+        }
+      ],
       "id": 2
+    },
+    {
+      "username": "eralkaven",
+      "questionTitle": "adfsad",
+      "question": "fadfasdfasdfa",
+      "questionPlus": [],
+      "questionMinus": [],
+      "solutions": [],
+      "id": 3
+    },
+    {
+      "username": "eralkaven",
+      "questionTitle": "adfasdf",
+      "question": "adfadsdf",
+      "questionPlus": [],
+      "questionMinus": [],
+      "solutions": [],
+      "id": 4
+    },
+    {
+      "username": "eralkaven",
+      "questionTitle": "asdfasdf",
+      "question": "asdfasfda",
+      "questionPlus": [],
+      "questionMinus": [],
+      "solutions": [],
+      "id": 5
     }
   ]
 }

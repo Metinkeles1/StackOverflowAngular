@@ -6,42 +6,26 @@
       <mat-form-field appearance="fill">               
         <textarea [(ngModel)]="question"  matInput cdkTextareaAutosize cdkAutosizeMinRows="5" placeholder="Sorunuzu sorun..."></textarea>
       </mat-form-field>
-      
-      
+            
       <div class="new-post-actions-container">
         <button (click)="post()" [disabled]="question.trim() == '' || questionTitle.trim() == ''" mat-raised-button class="post-button">Sor</button>
-      </div>
-  
-      <!-- <mat-card *ngFor="let item of questionList" [routerLink]="'/show-solutions/'+item.id" class="question-card">          
-        <mat-card-content >
-          <div class="solution-container" >            
-              <div class="arrows-container">                
-                <button mat-icon-button><mat-icon>expand_less</mat-icon></button>
-                  <span class="increasedecrease">2</span>
-                <button mat-icon-button><mat-icon>expand_more</mat-icon></button>
-              </div>     
-              <div class="data-container">
-                <p class="username">{{item.username}}</p>
-                <p>
-                  {{item.question}}
-                </p>          
-              </div>            
-          </div>
-        </mat-card-content>
-      </mat-card> -->
+      </div>        
 
-      <mat-card *ngFor="let item of questionList" [routerLink]="'/show-solutions/'+item.id" class="example-card">
+      <mat-card *ngFor="let item of questionList; let i=index;"  class="example-card">
         <mat-card-header>
-          <mat-card-title>{{item.questionTitle}}</mat-card-title>         
+          <mat-card-title>{{item.questionTitle}}</mat-card-title>            
+          <mat-card-subtitle>@{{item.username}}</mat-card-subtitle>
         </mat-card-header>        
         <mat-card-actions class="card-content">
-          <div>
-            <button mat-button>LIKE</button>
-            <button mat-button>SHARE</button>
+          <div >
+            <button (click)="questionVote(i,1)" [class.colored-icon]="item.questionPlus.indexOf(userService.user.id)>=0"mat-icon-button><mat-icon class="icon-display">thumb_up</mat-icon></button>
+            <button (click)="questionVote(i,-1)" [class.colored-icon]="item.questionMinus.indexOf(userService.user.id)>=0"mat-icon-button><mat-icon class="icon-display">thumb_down</mat-icon></button>
           </div>
-          <div>
-            <mat-card-subtitle style="margin-left: 10px;">@{{item.username}}</mat-card-subtitle>
-          </div>
+         <div>
+          <button mat-raised-button color="primary" [routerLink]="'/show-solutions/'+item.id">
+            Soruyu Gör
+          </button>
+         </div>
         </mat-card-actions>
       </mat-card>
       
